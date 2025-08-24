@@ -34,6 +34,7 @@ import {
 import { LicenseListParams, LicenseListResponse, Licenses } from './resources/licenses';
 import {
   BreakdownsObject,
+  Coverage,
   CoverageFull,
   CoverageTypeObject,
   DoiCounts,
@@ -798,6 +799,7 @@ export declare namespace Crossref {
   export {
     Members as Members,
     type BreakdownsObject as BreakdownsObject,
+    type Coverage as Coverage,
     type CoverageFull as CoverageFull,
     type CoverageTypeObject as CoverageTypeObject,
     type DoiCounts as DoiCounts,
