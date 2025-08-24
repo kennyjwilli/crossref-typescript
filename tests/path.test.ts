@@ -1,4 +1,4 @@
-import { createPathTagFunction, encodeURIPath } from 'crossref/internal/utils/path';
+import { createPathTagFunction, encodeURIPath } from 'crossref-typescript/internal/utils/path';
 import { inspect } from 'node:util';
 import { runInNewContext } from 'node:vm';
 
