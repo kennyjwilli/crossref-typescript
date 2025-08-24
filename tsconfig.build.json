@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "crossref/*": ["dist/src/*"],
-      "crossref": ["dist/src/index.ts"]
+      "crossref-typescript/*": ["dist/src/*"],
+      "crossref-typescript": ["dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,

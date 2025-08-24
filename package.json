@@ -1,5 +1,5 @@
 {
-  "name": "crossref",
+  "name": "crossref-typescript",
   "version": "0.0.1",
   "description": "The official TypeScript library for the Crossref API",
   "author": "Crossref <support@crossref.org>",
