@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 (2025-08-24)
+
+Full Changelog: [v0.1.0...v0.2.0](https://github.com/kennyjwilli/crossref-typescript/compare/v0.1.0...v0.2.0)
+
+### Features
+
+* **api:** update via SDK Studio ([eb85ff2](https://github.com/kennyjwilli/crossref-typescript/commit/eb85ff2de57eed19742721c488a4e7f6fec8919e))
+
 ## 0.1.0 (2025-08-24)
 
 Full Changelog: [v0.0.1...v0.1.0](https://github.com/kennyjwilli/crossref-typescript/compare/v0.0.1...v0.1.0)
