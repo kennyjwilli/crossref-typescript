@@ -88,11 +88,6 @@ import { isEmptyObj } from './internal/utils/values';
 
 export interface ClientOptions {
   /**
-   * Defaults to process.env['CROSSREF_API_KEY'].
-   */
-  apiKey?: string | null | undefined;
-
-  /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
    * Defaults to process.env['CROSSREF_BASE_URL'].
@@ -165,8 +160,6 @@ export interface ClientOptions {
  * API Client for interfacing with the Crossref API.
  */
 export class Crossref {
-  apiKey: string | null;
-
   baseURL: string;
   maxRetries: number;
   timeout: number;
@@ -182,8 +175,7 @@ export class Crossref {
   /**
    * API Client for interfacing with the Crossref API.
    *
-   * @param {string | null | undefined} [opts.apiKey=process.env['CROSSREF_API_KEY'] ?? null]
-   * @param {string} [opts.baseURL=process.env['CROSSREF_BASE_URL'] ?? https://api.example.com] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['CROSSREF_BASE_URL'] ?? https://api.crossref.org/v1] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -191,15 +183,10 @@ export class Crossref {
    * @param {HeadersLike} opts.defaultHeaders - Default headers to include with every request to the API.
    * @param {Record<string, string | undefined>} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
-  constructor({
-    baseURL = readEnv('CROSSREF_BASE_URL'),
-    apiKey = readEnv('CROSSREF_API_KEY') ?? null,
-    ...opts
-  }: ClientOptions = {}) {
+  constructor({ baseURL = readEnv('CROSSREF_BASE_URL'), ...opts }: ClientOptions = {}) {
     const options: ClientOptions = {
-      apiKey,
       ...opts,
-      baseURL: baseURL || `https://api.example.com`,
+      baseURL: baseURL || `https://api.crossref.org/v1`,
     };
 
     this.baseURL = options.baseURL!;
@@ -218,8 +205,6 @@ export class Crossref {
     this.#encoder = Opts.FallbackEncoder;
 
     this._options = options;
-
-    this.apiKey = apiKey;
   }
 
   /**
@@ -235,7 +220,6 @@ export class Crossref {
       logLevel: this.logLevel,
       fetch: this.fetch,
       fetchOptions: this.fetchOptions,
-      apiKey: this.apiKey,
       ...options,
     });
     return client;
@@ -245,7 +229,7 @@ export class Crossref {
    * Check whether the base URL is set to its default.
    */
   #baseURLOverridden(): boolean {
-    return this.baseURL !== 'https://api.example.com';
+    return this.baseURL !== 'https://api.crossref.org/v1';
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -253,23 +237,7 @@ export class Crossref {
   }
 
   protected validateHeaders({ values, nulls }: NullableHeaders) {
-    if (this.apiKey && values.get('authorization')) {
-      return;
-    }
-    if (nulls.has('authorization')) {
-      return;
-    }
-
-    throw new Error(
-      'Could not resolve authentication method. Expected the apiKey to be set. Or for the "Authorization" headers to be explicitly omitted',
-    );
-  }
-
-  protected async authHeaders(opts: FinalRequestOptions): Promise<NullableHeaders | undefined> {
-    if (this.apiKey == null) {
-      return undefined;
-    }
-    return buildHeaders([{ Authorization: `Bearer ${this.apiKey}` }]);
+    return;
   }
 
   /**
@@ -709,7 +677,6 @@ export class Crossref {
         ...(options.timeout ? { 'X-Stainless-Timeout': String(Math.trunc(options.timeout / 1000)) } : {}),
         ...getPlatformHeaders(),
       },
-      await this.authHeaders(options),
       this._options.defaultHeaders,
       bodyHeaders,
       options.headers,

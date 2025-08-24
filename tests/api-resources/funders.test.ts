@@ -2,10 +2,7 @@
 
 import Crossref from 'crossref-typescript';
 
-const client = new Crossref({
-  apiKey: 'My API Key',
-  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
-});
+const client = new Crossref({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
 
 describe('resource funders', () => {
   // Prism tests are disabled
