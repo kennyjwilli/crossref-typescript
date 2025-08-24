@@ -42,15 +42,15 @@ If you’d like to use the repository from source, you can either install from g
 To install via git:
 
 ```sh
-$ npm install git+ssh://git@github.com:stainless-sdks/crossref-typescript.git
+$ npm install git+ssh://git@github.com:kennyjwilli/crossref.git
 ```
 
 Alternatively, to link a local copy of the repo:
 
 ```sh
 # Clone
-$ git clone https://www.github.com/stainless-sdks/crossref-typescript
-$ cd crossref-typescript
+$ git clone https://www.github.com/kennyjwilli/crossref
+$ cd crossref
 
 # With yarn
 $ yarn link
