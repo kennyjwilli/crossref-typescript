@@ -1,5 +1,5 @@
-import { multipartFormRequestOptions, createForm } from 'crossref/internal/uploads';
-import { toFile } from 'crossref/core/uploads';
+import { multipartFormRequestOptions, createForm } from 'crossref-typescript/internal/uploads';
+import { toFile } from 'crossref-typescript/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

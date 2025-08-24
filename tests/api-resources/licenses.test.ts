@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Crossref from 'crossref';
+import Crossref from 'crossref-typescript';
 
 const client = new Crossref({
   apiKey: 'My API Key',

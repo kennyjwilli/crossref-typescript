@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIPromise } from 'crossref/core/api-promise';
+import { APIPromise } from 'crossref-typescript/core/api-promise';
 
 import util from 'node:util';
-import Crossref from 'crossref';
-import { APIUserAbortError } from 'crossref';
+import Crossref from 'crossref-typescript';
+import { APIUserAbortError } from 'crossref-typescript';
 const defaultFetch = fetch;
 
 describe('instantiate client', () => {
