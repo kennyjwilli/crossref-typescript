@@ -22,9 +22,7 @@ The full API of this library can be found in [api.md](api.md).
 ```js
 import Crossref from 'crossref-typescript';
 
-const client = new Crossref({
-  apiKey: process.env['CROSSREF_API_KEY'], // This is the default and can be omitted
-});
+const client = new Crossref();
 
 const worksMessage = await client.members.retrieveWorks(0);
 
@@ -39,9 +37,7 @@ This library includes TypeScript definitions for all request params and response
 ```ts
 import Crossref from 'crossref-typescript';
 
-const client = new Crossref({
-  apiKey: process.env['CROSSREF_API_KEY'], // This is the default and can be omitted
-});
+const client = new Crossref();
 
 const worksMessage: Crossref.WorksMessage = await client.members.retrieveWorks(0);
 ```
