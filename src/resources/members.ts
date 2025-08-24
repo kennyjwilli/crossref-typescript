@@ -971,7 +971,7 @@ export namespace Member {
 }
 
 export interface Query {
-  'search-terms': number;
+  'search-terms': number | null;
 
   'start-index': number;
 }
