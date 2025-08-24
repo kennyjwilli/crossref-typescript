@@ -3,6 +3,7 @@
 Types:
 
 - <code><a href="./src/resources/members.ts">BreakdownsObject</a></code>
+- <code><a href="./src/resources/members.ts">Coverage</a></code>
 - <code><a href="./src/resources/members.ts">CoverageFull</a></code>
 - <code><a href="./src/resources/members.ts">CoverageTypeObject</a></code>
 - <code><a href="./src/resources/members.ts">DoiCounts</a></code>

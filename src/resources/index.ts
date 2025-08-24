@@ -19,6 +19,7 @@ export { Licenses, type LicenseListResponse, type LicenseListParams } from './li
 export {
   Members,
   type BreakdownsObject,
+  type Coverage,
   type CoverageFull,
   type CoverageTypeObject,
   type DoiCounts,

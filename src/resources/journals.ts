@@ -12,7 +12,7 @@ export class Journals extends APIResource {
    * Returns information about a journal with the given ISSN, as an example use ISSN
    * 03064530
    */
-  retrieve(issn: unknown, options?: RequestOptions): APIPromise<JournalRetrieveResponse> {
+  retrieve(issn: string, options?: RequestOptions): APIPromise<JournalRetrieveResponse> {
     return this._client.get(path`/journals/${issn}`, options);
   }
 
@@ -718,7 +718,7 @@ export class Journals extends APIResource {
    * ##
    */
   listWorks(
-    issn: unknown,
+    issn: string,
     query: JournalListWorksParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<MembersAPI.WorksMessage> {

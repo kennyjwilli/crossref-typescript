@@ -780,6 +780,34 @@ export interface BreakdownsObject {
   'dois-by-issued-year': Array<Array<number>>;
 }
 
+export interface Coverage {
+  abstracts: number;
+
+  affiliations: number;
+
+  'award-numbers': number;
+
+  descriptions: number;
+
+  funders: number;
+
+  'last-status-check-time': number;
+
+  licenses: number;
+
+  orcids: number;
+
+  references: number;
+
+  'resource-links': number;
+
+  'ror-ids': number;
+
+  'similarity-checking': number;
+
+  'update-policies': number;
+}
+
 export interface CoverageFull {
   'abstracts-backfile': number;
 
@@ -831,97 +859,11 @@ export interface CoverageFull {
 }
 
 export interface CoverageTypeObject {
-  all: { [key: string]: CoverageTypeObject.All };
+  all: { [key: string]: Coverage };
 
-  backfile: { [key: string]: CoverageTypeObject.Backfile };
+  backfile: { [key: string]: Coverage };
 
-  current: { [key: string]: CoverageTypeObject.Current };
-}
-
-export namespace CoverageTypeObject {
-  export interface All {
-    abstracts: number;
-
-    affiliations: number;
-
-    'award-numbers': number;
-
-    descriptions: number;
-
-    funders: number;
-
-    'last-status-check-time': number;
-
-    licenses: number;
-
-    orcids: number;
-
-    references: number;
-
-    'resource-links': number;
-
-    'ror-ids': number;
-
-    'similarity-checking': number;
-
-    'update-policies': number;
-  }
-
-  export interface Backfile {
-    abstracts: number;
-
-    affiliations: number;
-
-    'award-numbers': number;
-
-    descriptions: number;
-
-    funders: number;
-
-    'last-status-check-time': number;
-
-    licenses: number;
-
-    orcids: number;
-
-    references: number;
-
-    'resource-links': number;
-
-    'ror-ids': number;
-
-    'similarity-checking': number;
-
-    'update-policies': number;
-  }
-
-  export interface Current {
-    abstracts: number;
-
-    affiliations: number;
-
-    'award-numbers': number;
-
-    descriptions: number;
-
-    funders: number;
-
-    'last-status-check-time': number;
-
-    licenses: number;
-
-    orcids: number;
-
-    references: number;
-
-    'resource-links': number;
-
-    'ror-ids': number;
-
-    'similarity-checking': number;
-
-    'update-policies': number;
-  }
+  current: { [key: string]: Coverage };
 }
 
 export interface DoiCounts {
@@ -1193,6 +1135,7 @@ export interface MemberRetrieveWorksParams {
 export declare namespace Members {
   export {
     type BreakdownsObject as BreakdownsObject,
+    type Coverage as Coverage,
     type CoverageFull as CoverageFull,
     type CoverageTypeObject as CoverageTypeObject,
     type DoiCounts as DoiCounts,

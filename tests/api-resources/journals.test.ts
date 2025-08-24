@@ -10,7 +10,7 @@ const client = new Crossref({
 describe('resource journals', () => {
   // Prism tests are disabled
   test.skip('retrieve', async () => {
-    const responsePromise = client.journals.retrieve({});
+    const responsePromise = client.journals.retrieve('issn');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -45,7 +45,7 @@ describe('resource journals', () => {
 
   // Prism tests are disabled
   test.skip('listWorks', async () => {
-    const responsePromise = client.journals.listWorks({});
+    const responsePromise = client.journals.listWorks('issn');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -60,7 +60,7 @@ describe('resource journals', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.journals.listWorks(
-        {},
+        'issn',
         {
           cursor: 'cursor',
           facet: 'facet',
