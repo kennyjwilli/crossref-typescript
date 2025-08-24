@@ -702,7 +702,7 @@ export interface Date {
 }
 
 export interface DateParts {
-  'date-parts': Array<Array<number>>;
+  'date-parts': Array<Array<number | null>>;
 }
 
 export interface Investigator {
