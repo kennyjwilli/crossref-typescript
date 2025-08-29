@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.1 (2025-08-29)
+
+Full Changelog: [v0.2.0...v0.2.1](https://github.com/kennyjwilli/crossref-typescript/compare/v0.2.0...v0.2.1)
+
+### Chores
+
+* **internal:** update global Error reference ([337a1b6](https://github.com/kennyjwilli/crossref-typescript/commit/337a1b6d49207e5d5ee12a7922a552094124be0a))
+
 ## 0.2.0 (2025-08-24)
 
 Full Changelog: [v0.1.0...v0.2.0](https://github.com/kennyjwilli/crossref-typescript/compare/v0.1.0...v0.2.0)
