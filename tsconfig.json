@@ -7,10 +7,9 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": "./",
     "paths": {
-      "crossref-typescript/*": ["src/*"],
-      "crossref-typescript": ["src/index.ts"]
+      "crossref-typescript/*": ["./src/*"],
+      "crossref-typescript": ["./src/index.ts"]
     },
     "noEmit": true,
 
